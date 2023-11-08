@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>chess</title>
+	 <script src="jquery-3.6.0.min.js"></script>   
+	 <!-- "defer" used to execute js code after html -->
+	 <script defer src="chess_js.js"></script>   
+	 <link rel="stylesheet" href="chess_css.css">
+	 <style>
+		
+	 </style>
+</head>
+
+<body>
+
+ 
+	
+		<div id="Loading" class="loading-container" style="display:none">
+		<div class="loading">
+		<select class="form-control" id="sel1" style="display:none">
+			<option selected>None</option>
+			<option>Queen</option>
+			<option>Knight</option>
+			<option>Bishop</option>
+			<option>Rook</option>
+		 </select>
+		</div>
+		</div>
+   
+    <h2 id="tog" align="center">White's Turn</h2>
+    <h2 id="checkmate" align="center"></h2>
+	
+	  <div class="dad-container">
+      <div class="main-container">
+        <div class="file-a files">
+          <div class="square" id="1">
+            <img src="./pieces/black/rook.png" alt="" />
+          </div>
+          <div class="square" id="9">
+            <img src="./pieces/black/pawn.png" alt="" />
+          </div>
+          <div class="square" id="17"></div>
+          <div class="square" id="25"></div>
+          <div class="square" id="33"></div>
+          <div class="square" id="41"></div>
+          <div class="square" id="49">
+            <img src="./pieces/white/pawn.png" alt="" />
+          </div>
+          <div class="square" id="57">
+            <img src="./pieces/white/rook.png" alt="" />
+          </div>
+        </div>
+        <div class="file-b files">
+          <div class="square" id="2">
+            <img src="./pieces/black/knight.png" alt="" />
+          </div>
+          <div class="square" id="10">
+            <img src="./pieces/black/pawn.png" alt="" />
+          </div>
+          <div class="square" id="18"></div>
+          <div class="square" id="26"></div>
+          <div class="square" id="34"></div>
+          <div class="square" id="42"></div>
+          <div class="square" id="50">
+            <img src="./pieces/white/pawn.png" alt="" />
+          </div>
+          <div class="square" id="58">
+            <img src="./pieces/white/knight.png" alt="" />
+          </div>
+        </div>
+        <div class="file-c files">
+          <div class="square" id="3">
+            <img src="./pieces/black/bishop.png" alt="" />
+          </div>
+          <div class="square" id="11">
+            <img src="./pieces/black/pawn.png" alt="" />
+          </div>
+          <div class="square" id="19"></div>
+          <div class="square" id="27"></div>
+          <div class="square" id="35"></div>
+          <div class="square" id="43"></div>
+          <div class="square" id="51">
+            <img src="./pieces/white/pawn.png" alt="" />
+          </div>
+          <div class="square" id="59">
+            <img src="./pieces/white/bishop.png" alt="" />
+          </div>
+        </div>
+        <div class="file-d files">
+          <div class="square" id="4">
+            <img src="./pieces/black/queen.png" alt="" />
+          </div>
+          <div class="square" id="12">
+            <img src="./pieces/black/pawn.png" alt="" />
+          </div>
+          <div class="square" id="20"></div>
+          <div class="square" id="28"></div>
+          <div class="square" id="36"></div>
+          <div class="square" id="44"></div>
+          <div class="square" id="52">
+            <img src="./pieces/white/pawn.png" alt="" />
+          </div>
+          <div class="square" id="60">
+            <img src="./pieces/white/queen.png" alt="" />
+          </div>
+        </div>
+        <div class="file-e files">
+          <div class="square" id="5">
+            <img src="./pieces/black/king.png" alt="" />
+          </div>
+          <div class="square" id="13">
+            <img src="./pieces/black/pawn.png" alt="" />
+          </div>
+          <div class="square" id="21"></div>
+          <div class="square" id="29"></div>
+          <div class="square" id="37"></div>
+          <div class="square" id="45"></div>
+          <div class="square" id="53">
+            <img src="./pieces/white/pawn.png" alt="" />
+          </div>
+          <div class="square" id="61">
+            <img src="./pieces/white/king.png" alt="" />
+          </div>
+        </div>
+        <div class="file-f files">
+          <div class="square" id="6">
+            <img src="./pieces/black/bishop.png" alt="" />
+          </div>
+          <div class="square" id="14">
+            <img src="./pieces/black/pawn.png" alt="" />
+          </div>
+          <div class="square" id="22"></div>
+          <div class="square" id="30"></div>
+          <div class="square" id="38"></div>
+          <div class="square" id="46"></div>
+          <div class="square" id="54">
+            <img src="./pieces/white/pawn.png" alt="" />
+          </div>
+          <div class="square" id="62">
+            <img src="./pieces/white/bishop.png" alt="" />
+          </div>
+        </div>
+        <div class="file-g files">
+          <div class="square" id="7">
+            <img src="./pieces/black/knight.png" alt="" />
+          </div>
+          <div class="square" id="15">
+            <img src="./pieces/black/pawn.png" alt="" />
+          </div>
+          <div class="square" id="23"></div>
+          <div class="square" id="31"></div>
+          <div class="square" id="39"></div>
+          <div class="square" id="47"></div>
+          <div class="square" id="55">
+            <img src="./pieces/white/pawn.png" alt="" />
+          </div>
+          <div class="square" id="63">
+            <img src="./pieces/white/knight.png" alt="" />
+          </div>
+        </div>
+        <div class="file-h files">
+          <div class="square" id="8">
+            <img src="./pieces/black/rook.png" alt="" />
+          </div>
+          <div class="square" id="16">
+            <img src="./pieces/black/pawn.png" alt="" />
+          </div>
+          <div class="square" id="24"></div>
+          <div class="square" id="32"></div>
+          <div class="square" id="40"></div>
+          <div class="square" id="48"></div>
+          <div class="square" id="56">
+            <img src="./pieces/white/pawn.png" alt="" />
+          </div>
+          <div class="square" id="64">
+            <img src="./pieces/white/rook.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+	
+	 <h5 align="right">-by Manthan Variya</h5>
+	 </body>
+<script>
+
+</script>
+	
+</html>
